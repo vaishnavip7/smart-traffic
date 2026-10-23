@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Traffic Management System</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f8fb;--card:#fff;--text:#14213d;--muted:#5b6678;--accent:#0f9d6b;--accent2:#1d4ed8;--line:#e2e8f0;--hero:#e8f5ef;--red:#dc2626;--amber:#d97706;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1420;--card:#172033;--text:#eef2f9;--muted:#9aa7bd;--accent:#34d399;--accent2:#7aa2ff;--line:#26324a;--hero:#112a25;--red:#f87171;--amber:#fbbf24;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1420;--card:#172033;--text:#eef2f9;--muted:#9aa7bd;--accent:#34d399;--accent2:#7aa2ff;--line:#26324a;--hero:#112a25;--red:#f87171;--amber:#fbbf24;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+header{background:var(--hero);padding:56px 0 48px;border-bottom:1px solid var(--line)}
+.tag{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
+h1{font-size:clamp(30px,6vw,48px);line-height:1.15;margin:8px 0 10px}
+.sub{font-size:clamp(17px,2.6vw,21px);color:var(--muted);max-width:620px;margin:0 0 24px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;margin:0 10px 10px 0}
+.b1{background:var(--accent);color:#04231a}.b2{border:1.5px solid var(--accent2);color:var(--accent2)}
+section{padding:44px 0}
+h2{font-size:28px;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 24px;max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin:6px 0 4px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:15px}
+.ic{font-size:28px}
+.demo{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.row{display:grid;grid-template-columns:90px 1fr 70px;gap:12px;align-items:center;margin:12px 0;font-size:15px}
+.row input{width:100%;accent-color:var(--accent)}
+.bar{height:10px;border-radius:6px;background:var(--line);overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.pill{font-size:12px;font-weight:700;padding:2px 8px;border-radius:99px;color:#fff}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+.steps{counter-reset:s;display:grid;gap:12px}
+.steps div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 52px;position:relative}
+.steps div:before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#04231a;font-weight:700;text-align:center;line-height:26px;font-size:14px}
+.banner{background:var(--card);border-left:4px solid var(--amber);border-radius:8px;padding:14px 18px;color:var(--muted);font-size:15px}
+footer{background:var(--hero);border-top:1px solid var(--line);padding:40px 0;text-align:center}
+footer p{color:var(--muted);margin:6px 0}
+</style>
+</head>
+<body>
+<header><div class="w">
+<span class="tag">IoT · Smart Cities · Cleaner Air</span>
+<h1>Smarter Traffic. Faster Journeys. Cleaner Air.</h1>
+<p class="sub">An IoT-based traffic management concept that monitors traffic density and pollution, adapts signal timing to real vehicle counts, and suggests less-congested routes, so commuters save time and fuel.</p>
+<a class="btn b1" href="#demo">Try the signal demo</a><a class="btn b2" href="#contact">Contact us</a>
+</div></header>
+
+<section><div class="w">
+<h2>The problem</h2>
+<p class="lead">Fixed-time signals don’t react to how many vehicles are actually waiting. The result is wasted time and fuel, idling exhaust and daily stress for commuters.</p>
+<div class="grid">
+<div class="card"><div class="ic">⏱️</div><h3>Long waits</h3><p>Signal timings often ignore real vehicle density.</p></div>
+<div class="card"><div class="ic">⛽</div><h3>Fuel wasted</h3><p>Idling and stop-and-go traffic burn fuel for nothing.</p></div>
+<div class="card"><div class="ic">🌫️</div><h3>Polluted roads</h3><p>Vehicle exhaust adds to roadside air pollution.</p></div>
+<div class="card"><div class="ic">🧭</div><h3>No visibility</h3><p>Commuters can’t easily see which roads are jammed.</p></div>
+</div></div></section>
+
+<section style="background:var(--card);border-block:1px solid var(--line)"><div class="w">
+<h2>Key features</h2>
+<p class="lead">One simple system built around the daily commuter.</p>
+<div class="grid">
+<div class="card"><div class="ic">🚗</div><h3>Traffic density monitoring</h3><p>Sensors or simulated data classify each road as low, medium or high density.</p></div>
+<div class="card"><div class="ic">🚦</div><h3>Smart signal timing</h3><p>Green time follows vehicle density, within safe minimum and maximum limits.</p></div>
+<div class="card"><div class="ic">🗺️</div><h3>Alternative routes</h3><p>Suggests a less-congested path when the usual road is jammed.</p></div>
+<div class="card"><div class="ic">📊</div><h3>Pollution + dashboard</h3><p>Air-quality readings shown next to traffic status in one clear view.</p></div>
+</div></div></section>
+
+<section id="demo"><div class="w">
+<h2>Try it: density changes the signal</h2>
+<p class="lead">Move the sliders to change waiting vehicles on each road and watch the proposed green time adapt.</p>
+<div class="demo" id="d"></div>
+<p class="note">Illustrative demo with simulated numbers. Green time is shared across a 120-second cycle, limited to 10–60 seconds per road.</p>
+</div></section>
+
+<section style="background:var(--card);border-block:1px solid var(--line)"><div class="w">
+<h2>How it works</h2><p class="lead">From sensing to a decision commuters can see.</p>
+<div class="steps">
+<div><b>Collect</b> vehicle counts and air-quality readings from sensors or simulated inputs.</div>
+<div><b>Process</b> readings with timestamps and locations to estimate density.</div>
+<div><b>Analyze</b> congestion and calculate signal-timing suggestions within safety limits.</div>
+<div><b>Display</b> traffic status, pollution and route suggestions on a dashboard.</div>
+<div><b>Evaluate</b> in simulation against fixed-time signals, then improve.</div>
+</div></div></section>
+
+<section><div class="w">
+<h2>Where we are</h2>
+<div class="banner"><b>Prototype concept.</b> We are building a digital prototype with simulated data. Live sensing, real signal control and live routing are future goals that need testing, safety validation and authorization. We’re looking for commuter feedback and pilot partners.</div>
+</div></section>
+
+<footer id="contact"><div class="w">
+<h2>Help us build smarter commutes</h2>
+<p>Commuter, student, campus or city team? We’d love your feedback or a pilot conversation.</p>
+<a class="btn b1" href="mailto:YOUR_EMAIL@example.com?subject=Smart%20Traffic%20Management%20System">Email us</a>
+<p>Team: Smart Traffic Management System · Hyderabad, India</p>
+</div></footer>
+
+<script>
+var R=[["Road A",40],["Road B",12],["Road C",8],["Road D",25]];
+var box=document.getElementById("d");
+function lvl(n){return n>=30?["High","var(--red)"]:n>=15?["Medium","var(--amber)"]:["Low","var(--accent)"]}
+function draw(){
+ var t=R.reduce(function(s,r){return s+r[1]},0)||1,h="";
+ R.forEach(function(r,i){
+  var g=Math.max(10,Math.min(60,Math.round(r[1]/t*120))),l=lvl(r[1]);
+  h+='<div class="row"><b>'+r[0]+'</b><div><input type="range" min="0" max="60" value="'+r[1]+'" data-i="'+i+'" aria-label="'+r[0]+' vehicles"><div class="bar"><i style="width:'+(g/60*100)+'%"></i></div></div><div><span class="pill" style="background:'+l[1]+'">'+l[0]+'</span><div style="font-size:13px;color:var(--muted)">'+r[1]+' cars · '+g+'s green</div></div></div>';
+ });
+ box.innerHTML=h;
+ box.querySelectorAll("input").forEach(function(el){
+  el.oninput=function(){R[el.dataset.i][1]=+el.value;var p=el.dataset.i;draw();var n=box.querySelector('input[data-i="'+p+'"]');if(n)n.focus()};
+ });
+}
+draw();
+</script>
+</body>
+</html>
